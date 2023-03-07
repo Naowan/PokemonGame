@@ -11,6 +11,8 @@ const initialCards = [
   { "src": "/images/squirtle.png", matched: false },
   { "src": "/images/pokemon-35.png", matched: false },
   { "src": "/images/pure.png", matched: false },
+  { "src": "/images/jirachi.png", matched: false },
+  { "src": "/images/lapras.png", matched: false },
   
 ];
 
