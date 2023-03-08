@@ -10,7 +10,7 @@
   background-color: black;
   border: 2px solid white;
   width: 7rem;
-  height: 3rem;
+  height: 2rem;
   font-family: monospace;
   font-size: 1rem;
 }
@@ -26,22 +26,24 @@ p {
   align-items: center;
   color: white; 
   font-family: monospace;
-  font-size: 1.5rem;
+  font-size: 1rem;
   background-color: black;
-  border: 2px solid white;
-  width: 10rem;
-  height: 4rem;
+  border: 3px solid white;
+  width: 9rem;
+  height: 3rem;
 }
+
+
 
 .grid {
   height: 600px;
   width: 600px;
-  margin-top: 40px;
+  margin-top: 5px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 1em;
 }
 
 .grid div img {
-  width: 71%;
+  width: 70%;
 }

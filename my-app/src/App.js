@@ -18,6 +18,7 @@ const initialCards = [
 
 function App() {
   const [cards, setCards] = useState([]);
+  const [score, setScore] = useState(0);
   const [turn, setTurn] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null)
   const [choiceTwo, setChoiceTwo] = useState(null)
@@ -40,6 +41,7 @@ function App() {
     setChoiceOne(null)
     setChoiceTwo(null)
     setCards(shuffledCards);
+    setScore(0);
     setTurn(0);
     setDisabled(false)
     setStartFlip(true)
@@ -62,6 +64,12 @@ function App() {
     setTurn(prevTurn => prevTurn + 1)
     setDisabled(false)
   }
+  function handleNewGameClick(){
+    resetTurn();
+    setTurn(0);
+    setScore(0);
+    shuffleCards()
+  }
 
   useEffect(() => {
     if (choiceOne && choiceTwo) {
@@ -76,6 +84,7 @@ function App() {
             }
           })
         })
+        setScore(prevCards => prevCards + 1);
         resetTurn();
       } else {
         setTimeout(() => {
@@ -87,7 +96,7 @@ function App() {
 
   return (
     <div className='container'>
-      <button onClick={shuffleCards}>New Game</button>
+      <button onClick={() => handleNewGameClick()}>New Game</button>
       <div className="grid">
         {cards.map(card => (
           <Card
@@ -101,6 +110,7 @@ function App() {
         ))}
       </div>
       <p>Turns: {turn}</p>
+      <p>Total Score: {score}</p>
     </div>
   );
 }
